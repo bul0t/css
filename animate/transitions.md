@@ -6,7 +6,19 @@
 - transition-duration
 - transition-timing-function
 - transition-delay
-- transition
+- transition (сокращенная запись)
+
+Пример:
+
+    .selector {
+        transition-property: height, background-color;
+        transition-duration: 2s;
+    }
+
+## Анимируемые CSS-свойства
+Размеры, цвета, тени и т.п. Анимируемые CSS-свойства можно посмотреть на странице: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+
+Не всем CSS свойствам можно задать плавный переход:
 
 ## transition-property
 Определяет свойства, к которым будет применен эффект перехода.

@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+.container {
+  background-color: #bdc3c7;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.canvas {
+  position: relative;
+  background-color: #ecf0f1;
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+/* amongus */
+.amongus {
+  width: 150px;
+  height: 160px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+/* column */
+.column {
+  width: 50px;
+  height: 10px;
+  background-color: #2ecc71;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  transition-property: height, background-color;
+  transition-duration: 2s;
+  /* color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 8px; */
+}
+.column:hover {
+  height: 100px;
+  background-color: #e74c3c;
+}
