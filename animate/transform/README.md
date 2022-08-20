@@ -16,6 +16,7 @@
 - transform: skew()
 - transform-origin
 
+Не переопределяйте свойство transform, записывайте все его значения в одно свойство: `transform: translate() scale() rotate()` и т.д.
 
 ## 3D Transformations
 - координатная система в 3D пространстве

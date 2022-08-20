@@ -31,7 +31,7 @@ body {
   transition-duration: 300ms;
 } */
 
-/* column */
+/* column - transitions */
 /* .column {
   width: 50px;
   height: var(--height);
@@ -53,16 +53,100 @@ body {
   background-color: #e74c3c;
 } */
 
+/* arc - translate (scale) */
+/* .arc {
+  background-color: #2ecc71;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
+  transition-property: transform, background-color;
+  transition-duration: 1s;
+  color: #2ecc71;
+  font-size: 8px;
+  line-height: 12px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.arc span {
+  visibility: hidden;
+  transition-property: color, visibility;
+  transition-duration: 1s;
+  transform: scaleX(-1);
+}
+
+.arc:hover {
+  // transform: scaleX(-2);
+  // transform: scaleY(2);
+  transform: scale(-2, 2);
+  // transform: scale(2);
+  background-color: crimson;
+}
+
+.arc:hover span {
+  color: #fff;
+  visibility: visible;
+}
+*/
+
+/* arc - вращение элемента */
+/* .arc {
+  background-color: #2ecc71;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  color: #2ecc71;
+  transition-property: transform;
+  transition-duration: 2s;
+}
+
+.arc:hover {
+  transform: rotate(-180deg) scaleX(-2) scaleY(2);
+  transform: rotate(20turn) scaleX(-2) scaleY(2); // два поворота
+} 
+*/
+
+/* arc - наклон элемента */
+/* .arc {
+  background-color: #2ecc71;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  color: #2ecc71;
+  transition-property: transform;
+  transition-duration: 500ms;
+} */
+
+/* .arc:hover { */
+  /* transform: skewX(45deg); */
+  /* transform: skewY(45deg); */
+  /* transform: skew(30deg, 30deg); */
+  /* transform: skewX(30deg) skewY(30deg); */
+  /* transform: skewY(30deg) skewX(30deg); */
+  /* transform: skewX(-30deg); */
+/* }  */
+
+/* arc - origin */
 .arc {
   background-color: #2ecc71;
-  width: 12.5px;
-  height: 150px;
   position: absolute;
-  left: calc(50% - 6.25px);
-  top: calc(50% - 75px);
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  color: #2ecc71;
   transition-property: transform;
-  transition-duration: 1s;
+  transition-duration: 500ms;
 }
+
 .arc:hover {
-  transform: translateX(50px)
-}
+  transform-origin: left top;
+  transform: rotate(90deg);
+} 
