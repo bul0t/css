@@ -1,8 +1,11 @@
-# CSS
+# CSS анимации
+- CSS переходы (transitions)
+- CSS трансформации
 - CSS анимации
+- CSS переходы и CSS-переменные
 
 ## Разное
 Чтобы расположить элемент { position: absolute } по середине, можно воспользоваться тремя способоами:
 - left/top: 50% и добавить отрицательные margin
 - left/top: calc(50% - ширина/высота элемента / 2)
-- left/top: 50% и добавить свойство transform translate
+- left/top: 50% и добавить свойство `transform:translate;`

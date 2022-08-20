@@ -1,3 +1,7 @@
+:root {
+  --height: 50px;
+}
+
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
@@ -17,33 +21,48 @@ body {
 }
 
 /* amongus */
-.amongus {
+/* .amongus {
   width: 150px;
   height: 160px;
   position: absolute;
   bottom: 0;
   left: 0;
   transition-property: all;
-  transition-duration: 2s;
-}
+  transition-duration: 300ms;
+} */
 
 /* column */
-.column {
+/* .column {
   width: 50px;
-  height: 10px;
+  height: var(--height);
   background-color: #2ecc71;
   position: absolute;
   bottom: 0;
   left: 50px;
-  transition-property: height, background-color;
-  transition-duration: 2s;
-  /* color: #FFFFFF;
+  transition-property: height, background-color; // Для каких свойств произвести анимацию
+  transition-duration: 1s;                       // Время работы анимации
+  transition-delay: 300ms;                       // Задержка перед анимацией
+  color: #FFFFFF;
   font-size: 12px;
   font-weight: bold;
   text-align: center;
-  padding-top: 8px; */
+  padding-top: 8px;
 }
 .column:hover {
-  height: 100px;
+  --height: 150px;
   background-color: #e74c3c;
+} */
+
+.arc {
+  background-color: #2ecc71;
+  width: 12.5px;
+  height: 150px;
+  position: absolute;
+  left: calc(50% - 6.25px);
+  top: calc(50% - 75px);
+  transition-property: transform;
+  transition-duration: 1s;
+}
+.arc:hover {
+  transform: translateX(50px)
 }

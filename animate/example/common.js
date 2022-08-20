@@ -2,9 +2,13 @@
 /* Создай игру: "Дойди до границы" (вопрос и ответ, ответ срелка вправо или лево) */
 // const amongus = document.querySelector('.amongus')
 // amongus.style.left = '0px'
+// amongus.style.bottom = '0px'
+
 // document.addEventListener('keydown', function (evt) {
-//   if (evt.code === 'ArrowRight') amongus.style.left = parseInt(amongus.style.left) + 600 + 'px'
-//   if (evt.code === 'ArrowLeft') amongus.style.left = parseInt(amongus.style.left) - 600 + 'px'
+//   if (evt.code === 'ArrowRight') amongus.style.left = parseInt(amongus.style.left) + 60 + 'px'
+//   if (evt.code === 'ArrowLeft') amongus.style.left = parseInt(amongus.style.left) - 60 + 'px'
+//   if (evt.code === 'ArrowUp') amongus.style.bottom = parseInt(amongus.style.bottom) + 60 + 'px'
+//   if (evt.code === 'ArrowDown') amongus.style.bottom = parseInt(amongus.style.bottom) - 60 + 'px'
 // })
 
 /* При клике увеличиваем высоту столбика и проценты */
