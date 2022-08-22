@@ -94,9 +94,20 @@
 
 Создаём перекат элемента вправо и обратно:
 
+    .arc {
+      background-color: #e74c3c;
+      width: 100px;
+      height: 100px;
+      animation-name: roll;
+      animation-duration: 3s;
+      animation-iteration-count: 3;
+    }
+
     @keyframes roll {
       0%, 100% {
-        transform: none;
+        /* transform: none; */
+        transform: translateX(0) rotate(0);
+        /* или вообще не указывать 0%, 100% */
       }
       50% {
         background-color: #f1c40f;
@@ -145,9 +156,66 @@
 Пример:
 
     selector {
-        animation-name: name;
-        animation-duration: 2s;
-        animation-iteration-count: 3;
+      animation-name: name;
+      animation-duration: 2s;
+      animation-iteration-count: 3;
+    }
+
+## animation-delay
+Устанавливает задержку перед началом выполнения анимации.  
+Время можно задавать в секундах или миллисекундах.  
+Через запяту можно указывать несколько время.
+
+    selector {
+      animation-name: roll;
+      animation-duration: 3s;
+      animation-iteration-count: 3;
+      animation-delay: 2s;
+    }
+
+## Применяем к одному элементу сразу несколько анимаций
+
+    animation-name: roll, color;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+    animation-delay: 2s;
+
+При необходимости к `color` можно добавить свои значения времени выполнения, повтора, задержки и т.д..
+
+    animation-name: roll, color;
+    animation-duration: 3s, 4s;
+    animation-iteration-count: 3, 4;
+    animation-delay: 2s, 4s;
+
+## animation-direction
+Направление проигрывания анимации. Анимция может двигаться в 2х направлениях, от начала до конца и наоборот.
+
+- normal - анимация проигрывается в обычном направлении, от начала до конца
+- reverse - анимация проигрывается в обратном направлении, с конца до начала
+
+Значения, зависимые от количества проигрываний анимации:
+
+- alternate - нечётные проигрывания воспроизводятся в прямом направлении, а чётные - в обратном.
+- alternate-reverse - нечётные проигрывания воспроизводятся в обратном направлении, а чётные - в прямом
+
+Пример:
+
+    .arc {
+      background-color: #e74c3c;
+      width: 100px;
+      height: 100px;
+      animation-name: roll;
+      animation-duration: 3s;
+      animation-iteration-count: 3;
+      animation-direction: reverse;
+    }
+
+    @keyframes roll {
+      100% {
+        transform: translateX(200px) rotate(360deg);
+        background-color: #f1c40f;
+        border-radius: 50%;
+      }
     }
 
 ## animation-fill-mode

@@ -178,54 +178,47 @@ body {
 }
 
 .arc {
-  color: #e74c3c;
   background-color: #e74c3c;
   width: 100px;
   height: 100px;
   animation-name: roll;
   animation-duration: 3s;
   animation-iteration-count: 3;
-  transform: rotate(0);
+  animation-direction: alternate;
 }
 
 @keyframes roll {
-  0%, 100% {
-    transform: none;
-  }
-  50% {
-    background-color: #f1c40f;
+  100% {
     transform: translateX(200px) rotate(360deg);
+    background-color: #f1c40f;
     border-radius: 50%;
   }
 }
 
-@keyframes square {
-  0% {
-    background-color: #e74c3c;
-    transform: rotate(0);
+@keyframes color {
+  50% {
+    background-color: #f1c40f;
   }
+}
+
+@keyframes square {
   17% {
     background-color: #e67e22;
-    transform: rotate(360deg);
   }
   34% {
     background-color: #f1c40f;
-    transform: rotate(0deg);
   }
   51% {
     background-color: #2ecc71;
-    transform: rotate(360deg);
   }
   68% {
     background-color: #3498db;
-    transform: rotate(0deg);
   }
   85% {
     background-color: #1f2f98;
-    transform: rotate(360deg);
   }
   100% {
     background-color: #9b59b6;
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
 }
