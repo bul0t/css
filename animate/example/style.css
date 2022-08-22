@@ -12,13 +12,6 @@ body {
   margin: 0 auto;
   padding: 60px 0;
 }
-.canvas {
-  position: relative;
-  background-color: #ecf0f1;
-  width: 800px;
-  height: 500px;
-  margin: 0 auto;
-}
 
 /* amongus */
 /* .amongus {
@@ -134,19 +127,105 @@ body {
 /* }  */
 
 /* arc - origin */
-.arc {
-  background-color: #2ecc71;
+/* .canvas {
+  position: relative;
+  background-color: #ecf0f1;
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.wrap-arc {
+  transform-style: preserve-3d;
+  // perspective: 500px;
+  perspective-origin: left top;
   position: absolute;
   width: 100px;
   height: 100px;
   left: calc(50% - 50px);
   top: calc(50% - 50px);
+}
+
+.arc {
   color: #2ecc71;
-  transition-property: transform;
-  transition-duration: 500ms;
+  background-color: #2ecc71;
+  width: 100px;
+  height: 100px;
+  backface-visibility: hidden;
+  transition-property: all;
+  transition-duration: 1000ms;
+  // transform: translateZ(300px) rotateY(45deg);
 }
 
 .arc:hover {
-  transform-origin: left top;
-  transform: rotate(90deg);
-} 
+  transform: rotateY(180deg);
+} */
+
+.canvas {
+  position: relative;
+  background-color: #ecf0f1;
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.wrap-arc {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+}
+
+.arc {
+  color: #e74c3c;
+  background-color: #e74c3c;
+  width: 100px;
+  height: 100px;
+  animation-name: roll;
+  animation-duration: 3s;
+  animation-iteration-count: 3;
+  transform: rotate(0);
+}
+
+@keyframes roll {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    background-color: #f1c40f;
+    transform: translateX(200px) rotate(360deg);
+    border-radius: 50%;
+  }
+}
+
+@keyframes square {
+  0% {
+    background-color: #e74c3c;
+    transform: rotate(0);
+  }
+  17% {
+    background-color: #e67e22;
+    transform: rotate(360deg);
+  }
+  34% {
+    background-color: #f1c40f;
+    transform: rotate(0deg);
+  }
+  51% {
+    background-color: #2ecc71;
+    transform: rotate(360deg);
+  }
+  68% {
+    background-color: #3498db;
+    transform: rotate(0deg);
+  }
+  85% {
+    background-color: #1f2f98;
+    transform: rotate(360deg);
+  }
+  100% {
+    background-color: #9b59b6;
+    transform: rotate(0deg);
+  }
+}

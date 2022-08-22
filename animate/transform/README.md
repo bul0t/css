@@ -20,8 +20,8 @@
 
 ## 3D Transformations
 - координатная система в 3D пространстве
-- transform: translateZ()
 - transform-style
+- transform: translateZ()
 - transform: translate3d()
 - transform: rotateX()
 - transform: rotateY()
