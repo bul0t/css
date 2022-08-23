@@ -222,3 +222,132 @@
 Оределяет, как нужно применять стили к объекту анимации до и после ее выполнения.
 
 - `forwards` - элемент сохраняет конечное состояние анимации, т.е. свойства, записанные в последнем ключевом кадре будут применены к элементу после завершения анимации
+- `backwards` - свойства описанные в первом ключевом кадре, будут сразу применены к элементу еще до начала проигрывания анимации, даже при установленной задержке перед началом проигрывания анимации, конечное состояние не сохраняет
+- `both` - объединяет в себе свойства forwards и backwards, т. е. до начала анимации элементу присваивается состояние первого ключевого кадра, а после завершения - конечное состояние анимации сохраняется
+- `none` - анимация не будет применять какие-либо стили к элементу как до, так и после проигрывания анимации, значение по-умолчанию
+
+Пример:
+
+    .arc {
+      background-color: #e74c3c;
+      width: 100px;
+      height: 100px;
+      animation-name: roll;
+      animation-duration: 1s;
+      animation-iteration-count: 3;
+      /* animation-direction: alternate; */
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes roll {
+      100% {
+        transform: translateX(200px) rotate(360deg);
+        background-color: #f1c40f;
+        border-radius: 50%;
+      }
+    }
+
+Поведение параметров зависит от значений направления (direction) и количества проигрываний (iteration-count) анимации.
+
+## animation-timing-function
+Определяет скорость и ускорение изменения значений свойств между ключевыми кадрами во время проигрывания анимации.
+
+  selector {
+    animation-name: name;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+
+Параметры:
+
+- ease (по-умолчанию)
+- ease-in
+- ease-out
+- ease-in-out
+- linear
+- step-start
+- step-end
+- steps(<число>, start | end)
+- cubic-bezier(<число>, <число>, <число>, <число>)
+
+## animation-play-state
+Устанавливает состояние анимации, т.е. анимация проигрывается или стоит на паузе.
+
+    selector {
+      animation-name: name;
+      animation-duration: 2s;
+      animation-play-state: running;
+    }
+
+Параметры:
+- `paused` - анимация стоит на паузе
+- `running` - анимация проигрывается
+
+Создадим анимацию, где элемент будет двигаться по прямой и при наведении на элемент, анимация движения встанет на пайзу и запустится анимация ховера, затем при отведении мыши от элемента, продолжится анимация движения.
+
+    .arc {
+      position: relative;
+      background-color: #e74c3c;
+      width: 100px;
+      height: 100px;
+      animation-name: roll;
+      animation-duration: 7s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+    }
+
+    .arc:hover {
+      animation-name: roll, roll-hover;
+      animation-duration: 7s, 0.25s;
+      animation-timing-function: linear, ease;
+      animation-iteration-count: infinite, 1;
+      animation-fill-mode: none, forwards;
+      animation-play-state: paused, running;
+    }
+
+    @keyframes roll {
+      0% {
+        left: 400px;
+        transform: rotate(0);
+        background-color: #f1c40f;
+      }
+      100% {
+        left: -400px;
+        transform: rotate(-360deg);
+        background-color: #e74c3c;
+        border-radius: 50%;
+      }
+    }
+
+    @keyframes roll-hover {
+      to {
+        transform: rotate(30deg) scale(2) translate(7%, -12%);
+      }
+    }
+
+## animation
+Универсальная запись всех свойств, относящихся к CSS-анимациям, соблюдайте порядок записи свойств:
+
+    selector {
+      animation: имя_анимации 3s ease 1s 7 reverse forwards;
+    }
+
+Параметры:
+
+- `none` - отменяет анимацию
+
+Порядок записи свойств:
+- animation-name
+- animation-duration
+- animation-timing-function
+- animation-delay
+- animation-iteration-count
+- animation-direction
+- animation-fill-mode
+- animation-play-state
+
+## Разное
+- animate.style - animate.css, библиотека с анимациями
+- animista.net - animista.net - сервис с анимациями
+- minimamente.com/project/magic/ - Magic Animations CSS3, библиотека с анимациями

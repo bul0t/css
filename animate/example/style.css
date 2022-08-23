@@ -178,20 +178,43 @@ body {
 }
 
 .arc {
+  position: relative;
   background-color: #e74c3c;
   width: 100px;
   height: 100px;
   animation-name: roll;
-  animation-duration: 3s;
-  animation-iteration-count: 3;
-  animation-direction: alternate;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.arc:hover {
+  animation-name: roll, roll-hover;
+  animation-duration: 7s, 0.25s;
+  animation-timing-function: linear, ease;
+  animation-iteration-count: infinite, 1;
+  animation-fill-mode: none, forwards;
+  animation-play-state: paused, running;
 }
 
 @keyframes roll {
-  100% {
-    transform: translateX(200px) rotate(360deg);
+  0% {
+    left: 400px;
+    transform: rotate(0);
     background-color: #f1c40f;
+  }
+  100% {
+    left: -400px;
+    transform: rotate(-360deg);
+    background-color: #e74c3c;
     border-radius: 50%;
+  }
+}
+
+@keyframes roll-hover {
+  to {
+    transform: rotate(30deg) scale(2) translate(7%, -12%);
   }
 }
 
