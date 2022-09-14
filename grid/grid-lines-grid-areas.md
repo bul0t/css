@@ -1,4 +1,6 @@
 # Grid Lines & Grid Areas
+Работаем с грид линиями и areas.
+
 Управление размерами и позицией grid-элемента.
 
     grid-template-columns: repeat(3, 1fr);

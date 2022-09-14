@@ -9,63 +9,23 @@ body {
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 300px;
-  /* align-items: center; */
-  justify-items: center;
+  height: 600px;
+  /* gap: 15px; */
   border: 3px solid #9b59b6;
+  justify-content: space-evenly;
+  align-content: space-evenly;
 }
 .grid__item {
-
+  width: 100px;
+  height: 100px;
 }
 .grid__item--1 {
   background-color: #ecf0f1;
-  /* align-self: stretch; */
-  /* align-self: start; */
-  /* align-self: end; */
-  /* align-self: center; */
-  /* justify-self: stretch; */
-  /* justify-self: start; */
-  /* justify-self: end; */
-  /* justify-self: center; */
 }
 .grid__item--2 {
   background-color: #ecf0f1;
-  /* grid-column: col 3 / col 5;
-  grid-row: row 1 / row 3; */
-  grid-column: span 2;
-  grid-row: span 2;
 }
 .grid__item--3 {
   background-color: #ecf0f1;
-  grid-column: span 1;
-  grid-row: span 2;
 }
-.grid__item--4 {
-  background-color: #ecf0f1;
-}
-.grid__item--5 {
-  background-color: #ecf0f1;
-}
-.grid__item--6 {
-  background-color: #ecf0f1;
-}
-.grid__item--7 {
-  background-color: #ecf0f1;
-}
-.grid__item--8 {
-  background-color: #ecf0f1;
-}
-.grid__item--9 {
-  background-color: #ecf0f1;
-  grid-column: span 2;
-  /* grid-row: span 1; */
-}
-.grid__item--10 {
-  background-color: #ecf0f1;
-  grid-column: span 2;
-  /* grid-row: span 1; */
-}
-.grid__item--11 {
-  background-color: #ecf0f1;
-}
+

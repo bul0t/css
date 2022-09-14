@@ -14,6 +14,8 @@
       grid-template-columns: 1fr; // Занять всю ширину
       grid-template-rows: 300px;
       border: 3px solid #9b59b6;
+      align-items: stretch;
+      justify-items: stretch;
     }
     .grid__item--1 {
       /* align-self: stretch; */
