@@ -10,21 +10,16 @@ body {
 .grid {
   display: grid;
   gap: 8px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+  min-height: 300px;
+  /* grid-template-columns: repeat(3, 200px); */
+  /* grid-template-columns: repeat(auto-fill, 200px); */
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, auto)); */
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   border: 3px solid #9b59b6;
   box-sizing: border-box;
-}
-.grid--1 {
-  height: 100vh;
-}
-.grid--2 {
-  grid-template-columns: repeat(2, auto);
 }
 
 .grid__item {
   background-color: #ecf0f1;
-}
-
-.grid--2__item {
-  background-color: #bdc3c7;
+  height: 300px;
 }
